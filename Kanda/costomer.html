@@ -1,0 +1,60 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+    <head>
+        <link rel="stylesheet" href="costomer.css">
+    </head>
+    <body>
+        <header></header>
+        <h1>ข้อมูลลูกค้า</h1>
+        <form action="costomeraction.php" method="post">
+        <div>
+            <div class="container">
+                <div class="serch">
+                    <label for="serchcos">ค้นหาชื่อลูกค้า</label>
+                    <input type="text" name="serchcos">
+                    <button type="submit" name="serch" class="serchbox">ค้นหา</button>
+                </div>
+                <div class="tall">
+                    <img src="log.png" alt="carimg" class="carimg">
+                </div>
+                <div>
+                    <label for="cosid">รหัสลูกค้า</label>
+                    <input type="text"name="cosid" value="">
+                </div>
+                <div>
+                    <label for="cosname">ชื่อลูกค้า</label>
+                    <input type="text" name="cosname" value="">
+                </div>
+                <div>
+                    <label for="tel">เบอร์โทรศัพท์</label>
+                    <input type="tel"name="tel" value="">
+                </div>
+                <div>
+                    <label for="address">ที่อยู่ลูกค้า</label>
+                    <input type="text"name="address" value="">
+                </div>
+            </div>
+            <div class="BTN">
+                <div>
+                    <button type="submit" name="add">เพิ่ม</button>
+                </div>
+                <div>
+                    <button type="submit" name="change">แก้ไข</button>
+                </div>
+                <div>
+                    <button type="submit" name="save">บันทึก</button>
+                </div>
+                <div>
+                    <button type="submit" name="clear">ล้าง</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </body>
+</html>

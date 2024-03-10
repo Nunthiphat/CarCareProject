@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box-header {
+    background-color: black;
+    color: white;
+    padding: 40px;
+    position: relative;
+}
+
+.box-main {
+    width: 100%;
+}
+
+.box-menu {
+    padding: 10px;
+    text-align: right;
+}
+
+.box-header button {
+    position: absolute;
+    right: 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    top: 25px;
+    font-size: 20px;
+}
+
+.box-header button:hover {
+    color: red;
+}
+
+.Icon {
+    width: 100px;
+    top: 2px;
+    left: 30px;
+    position: absolute;
+    z-index: 2;
+}
+
+.text-icon {
+    font-size: 16px;
+    position: absolute;
+    z-index: 3;
+    left: 35px;
+    top: 45px;
+}
