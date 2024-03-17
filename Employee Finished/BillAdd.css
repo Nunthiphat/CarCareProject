@@ -1,0 +1,51 @@
+/* custom-style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-main {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px; /* ปรับขนาดฟอร์มให้ไม่ใหญ่เกินไป */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับฟอร์ม */
+}
+
+.input-in {
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างช่องข้อมูล */
+}
+
+.input-in label {
+    display: block;
+    text-align: left; /* จัดข้อความไปทางซ้าย */
+    margin: 10px; /* เพิ่มระยะห่างระหว่าง label และ input */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px; /* เพิ่มพื้นที่ padding สำหรับ input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* ปรับขนาด input เพื่อไม่ให้เกินพื้นที่ที่กำหนด */
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
