@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include('Topheader.php');
     
     $conn = mysqli_connect("localhost","root","","hiwkao");
     $sql = "SELECT * FROM fixorder";
@@ -12,21 +13,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee</title>
+    <link rel="stylesheet" href="Employee.css">
 </head>
 <body>
-<h1>ระบบพนักงาน</h1>
-<main>
-    <div class="container">
+<div class="main-content">
+    <h1>ระบบพนักงาน</h1>
+    <div class="gray-box">
         <table>
-            <thead>
-                <tr>
-                    <th>ชื่อลูกค้า</th>
-                    <th>เบอร์โทรลูกค้า</th>
-                    <th>ทะเบียนรถ</th>
-                    <th>ยี่ห้อรถ</th>
-                    <th>อาการของรถ</th>
-                </tr>
-            </thead>
+            <tr>
+                <th>ชื่อลูกค้า</th>
+                <th>เบอร์โทรลูกค้า</th>
+                <th>ทะเบียนรถ</th>
+                <th>ยี่ห้อรถ</th>
+                <th>อาการของรถ</th>
+            </tr>
             <tbody>
                 <tr>
                 <?php
@@ -55,19 +55,11 @@
             </tbody>
         </table>
     </div>
-</main>
-<footer>
-    <form action="BillAdd.php">
-        <button type="Submit" name="Bill">Add Bill</button>
-    </form>
-
-    <form action="PartOrder.php">
-        <button type="Submit" name="Desired">Part Order</button>
-    </form>
-
-    <form action="PartReceiveList.php">
-        <button type="Submit" name="Receive">Part Receive</button>
-    </form>
-</footer>
+</div>
+<div class="footer">
+    <a href="BillAdd.php" class="button">Add Bill</a>
+    <a href="PartOrder.php" class="button">Part Order</a>
+    <a href="PartReceiveList.php" class="button">Part Receive</a>
+</div>
 </body>
 </html>
