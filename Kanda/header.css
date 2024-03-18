@@ -21,13 +21,19 @@ body {
 }
 
 .box-header button {
-    position: absolute;
-    right: 15px;
     border: none;
     background-color: black;
     color: white;
     top: 25px;
     font-size: 20px;
+}
+
+.container {
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    display: flexbox;
 }
 
 .box-header button:hover {

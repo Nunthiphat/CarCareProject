@@ -55,20 +55,28 @@
             $sql = "SELECT * FROM `employee` WHERE EmpName = ?";
 			$stmt = mysqli_stmt_init($conn);
 			if(!mysqli_stmt_prepare($stmt, $sql)){
-				header("location:costomer.php?error=StmtFaild");
+				header("location:employee.php?error=StmtFaild");
 				exit();
 			}
 			mysqli_stmt_bind_param($stmt, "s", $serchemp);                                             
 			mysqli_stmt_execute($stmt);
 			$resultData = mysqli_stmt_get_result($stmt);
-			$Arrays = array();
-			while($row = mysqli_fetch_assoc($resultData)){
-				array_push($Arrays, $row);
-			}
-			$_SESSION["empdata"] = $Arrays;
-
-			header("location:employee.php?serch");
-			exit();
+            if (!$resultData) {
+                header("location:employee.php?error=QueryFailed");
+                exit();
+            }
+            if (mysqli_num_rows($resultData) > 0) {
+                $Arrays = array();
+                while ($row = mysqli_fetch_assoc($resultData)) {
+                    array_push($Arrays, $row);
+                }
+                $_SESSION["empdata"] = $Arrays;
+                header("location:employee.php?serch");
+                exit();
+            } else {
+                header("location:employee.php?error=NoDataFound");
+                exit();
+            }
         } else {
             header("location:employee.php?empdata");
 		    exit();

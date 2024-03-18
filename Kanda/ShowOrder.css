@@ -1,0 +1,29 @@
+body {
+     font-family: Arial, sans-serif; /* Specify your preferred font family */
+     background-color: #f0f0f0; /* Set a background color */
+     margin: 0; /* Remove default margin */
+     padding: 0; /* Remove default padding */
+ }
+h1 {
+     text-align: center; /* Center-align the heading */
+     margin-top: 20px; /* Add some top margin for spacing */
+ }
+table {
+     width: 100%; /* Make the table take up the full width of its container */
+     border-collapse: collapse; /* Collapse borders for a cleaner appearance */
+     margin-top: 20px; /* Add some top margin for spacing */
+ }
+th, td {
+     padding: 10px; /* Add padding to table cells for spacing */
+     border: 1px solid #ccc; /* Add a border around cells */
+     text-align: center; /* Center-align text in cells */
+ }
+th {
+     background-color: #f2f2f2; /* Set a background color for table headers */
+ }
+tr:nth-child(even) {
+     background-color: #f9f9f9; /* Alternate row background color for better readability */
+ }
+tr:hover {
+     background-color: #e0e0e0; /* Change background color on hover for better interactivity */
+ }

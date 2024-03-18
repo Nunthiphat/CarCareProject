@@ -22,22 +22,19 @@
         <?php
             if(isset($_SESSION["partorderid"])){
                 foreach($_SESSION["partorderid"] as $x) {
-                    $partOrderID = $x["PIOID"];
-                    $Datereport = $x["PartInDate"];
-                    $partname = $x["PartName"];
-                    $partid = $x["PartID"];
-                    $AmountLeft = $x["AmountLeft"];
-                    $CarID = $x["Carlisenplate"];
-                    $OrderAmount = $x["AmountOrder"];
+                    $partOrderID = $x["PORID"];
+                    $partname = $x["partName"];
+                    $partprice = $x["partprice"];
+                    $OrderAmount = $x["OrderAmount"];
+                    $carlisenplaye = $x["Carlisenplate"];
                 }
             } else {
-                $partOrderID = "";
-                    $Datereport = "";
+                    $partOrderID = "";
                     $partname = "";
-                    $partid =  "";
-                    $AmountLeft =  "";
-                    $CarID = "";
+                    $partprice = "";
                     $OrderAmount = "";
+                    $carlisenplaye = "";
+                
             }
         ?>
             <div Class="Main">
@@ -50,28 +47,24 @@
                         </div>
                     </div>
                     <div>
-                        <label for="Datereport">วันที่แจ้งซ้อม</label>
-                        <input type="date" name="Datereport" value="<?= $Datereport ?>">
+                        <label for="partName">ชื่ออะไหล่</label>
+                        <input type="text" name="partName" value="<?= $partname ?>">
                     </div>
                     <div>
-                        <label for="partname">ชื่อสินค้า</label>
-                        <input type="text" name="partname" value="<?= $partname ?>">
+                        <label for="partprice">ราคา</label>
+                        <input type="text" name="partprice" value="<?= $partprice ?>">
                     </div>
                     <div>
-                        <label for="partID">รหัสอะไหล่</label>
-                        <input type="text"name="partid" value="<?= $partid ?>">
+                        <label for="Amount">จำนวน</label>
+                        <input type="text" name="Amount" value="<?= $OrderAmount ?>">
                     </div>
                     <div>
-                        <label for="AmountLeft">จำนวนที่เหลือ</label>
-                        <input type="text" name="AmountLeft" value="<?= $AmountLeft ?>">
+                        <label for="PartAddDate">วันเพิ่มอะไหล่</label>
+                        <input type="date" name="PartAddDate">
                     </div>
                     <div>
-                        <label for="CarID">รหัสรสยนต์</label>
-                        <input type="text"name="CarID" value="<?= $CarID ?>">
-                    </div>
-                    <div>
-                        <label for="OrderAmount">จำนวนที่สั่ง</label>
-                        <input type="text" name="OrderAmount" value="<?= $OrderAmount ?>">
+                        <label for="Carlisenplate">รหัสป้ายรถ</label>
+                        <input type="text" name="Carlisenplate" value="<?= $carlisenplaye ?>">
                     </div>
                 </div>
                 <div class="BTN">
