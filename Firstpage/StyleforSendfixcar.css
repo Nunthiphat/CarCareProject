@@ -71,31 +71,28 @@ body {
     z-index: 1; 
   }
 
-  .form-container {
+  
+  .container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
   }
   
-  .input-group {
-    display: flex;
-    margin-bottom: 10px;
+  * {
+    color: inherit;
   }
-
-  .required {
-    color: black;
+  
+  .form-control {
+    background-color: #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    width: 250px;
   }
-
-  .required::after {
-    content: "* ";
-    color: red;
-    margin-left: 5px;
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #ccc;
   }
+  
   
   .button-red {
     background-color: red;
@@ -123,4 +120,13 @@ body {
   
   .button-gray:hover {
     background-color: rgb(224, 224, 224);
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }

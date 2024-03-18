@@ -32,23 +32,21 @@
   </div>    
 
   <form action="orderfixadd.php" method="post" class="form-container">
-  <div class="form-container">
-    <div class="input-group">
-      <label for="custname" class="required">ชื่อลูกค้า</label>
-      <input type="text" id="custname" name="custname" required>
+  <div class="container">
+  <form action="orderfixadd.php" method="post" class="form-container">
+    <div class="form-container">
+      <br><br><label>โปรดใส่ข้อมูล</label><br>
+      <br><br><label for="custname" class="required">ชื่อลูกค้า *</label><br>
+      <input type="text" id="custname" name="custname" class="form-control" required><br>
+      <label for="phone" class="required">เบอร์โทรติดต่อ *</label><br>
+      <input type="tel" id="phone" name="phone" class="form-control" required><br>
+      <label for="carid" class="required">หมายเลขทะเบียนรถ *</label><br>
+      <input type="text" id="carid" name="carid" class="form-control" required><br><br>
+      <button type="submit" class="button-red">ส่งซ่อม</button>
+      <a href="Mainpage.php"><button class="button-gray">ย้อนกลับ</button></a>
     </div>
-    <div class="input-group">
-      <label for="phone" class="required">เบอร์โทรติดต่อ</label>
-    <input type="tel" id="phone" name="phone" required>
-    </div>
-    <div class="input-group">
-      <label for="carid" class="required">หมายเลขทะเบียนรถ</label>
-      <input type="text" id="carid" name="carid" required>
-    </div>
-    <br>
-    <button type="submit" class="button-red">ส่งซ่อม</button>
-    <a href="Mainpage.php"><button class="button-gray">ย้อนกลับ</button></a>
-   </div>
+  </form>
+</div>
   </form>
 
 </body>
