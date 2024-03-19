@@ -1,32 +1,41 @@
-<?php 
-
+<?php
 session_start();
 include('Connection.php');
 
-$Email = $_POST['Email'];
-$Password = $_POST['Password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $Email = $_POST['Email'];
+    $Password = $_POST['Password'];
 
-echo $Email ;
+    $sql = "SELECT * FROM employee WHERE EmpEmail = ? AND EmpPassword = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $Email, $Password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-$sql = "SELECT * FROM userdata WHERE email = '$Email' ";
+    if ($result->num_rows > 0) {
+        $data = $result->fetch_assoc();
+        $_SESSION['EmpID'] = $data['EmpID'];
+        // เปลี่ยนหน้าที่พนักงานไป
+        header('location: #');
+        exit;
+    }
 
-$result = mysqli_query($conn , $sql);
-$data = mysqli_fetch_array($result) ;
+    $sql1 = "SELECT * FROM owner WHERE OwnerEmail = ? AND OwnerPassword = ?";
+    $stmt1 = $conn->prepare($sql1);
+    $stmt1->bind_param("ss", $Email, $Password);
+    $stmt1->execute();
+    $result1 = $stmt1->get_result();
 
-if($data['email'] != $Email) {
+    if ($result1->num_rows > 0) {
+        $data1 = $result1->fetch_assoc();
+        $_SESSION['OwnerID'] = $data1['OwnerID'];
+        // หน้าที่เจ้าของกิจการไป
+        header('location: #');
+        exit;
+    }
 
-    $_SESSION['error'] = "ไม่มีอีเมลนี่ในระบบ";
-    header('location:Login.php');
-
-}elseif($data['password'] != $Password) {
-
-    $_SESSION['error'] = "รหัสไม่ถูกต้อง";
-    header('location:Login.php');
-
-}else{
-    // อย่าลืมเปลี่ยนหน้าที่ต้องการไป
-    $_SESSION['EmpID'] = $data['EmpID'] ;
-    header('location:#');
+    $_SESSION['error'] = "อีเมล หรือ รหัสไม่ถูกต้อง";
+    header('location: Login.php');
+    exit;
 }
-
 ?>
