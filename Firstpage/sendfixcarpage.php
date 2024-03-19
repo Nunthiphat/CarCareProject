@@ -35,7 +35,7 @@
   <div class="container">
   <form action="orderfixadd.php" method="post" class="form-container">
     <div class="form-container">
-      <br><br><label>โปรดใส่ข้อมูล</label><br>
+      <br><br><label style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold;">โปรดใส่ข้อมูล</label><br>
       <br><br><label for="custname" class="required">ชื่อลูกค้า *</label><br>
       <input type="text" id="custname" name="custname" class="form-control" required><br>
       <label for="phone" class="required">เบอร์โทรติดต่อ *</label><br>

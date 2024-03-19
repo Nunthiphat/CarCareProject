@@ -37,7 +37,7 @@
   </div>    
     <br>
     <br>
-    <p style="text-align: center;">HiwKao</p><br>
+    <p style="text-align: center; font-size: 24px;">HiwKao</p><br>
     <p style="text-align: center;">ติดต่อสอบถาม Tal : 090-xxx-xxxx</p><br><br><br>
 
 </body>
