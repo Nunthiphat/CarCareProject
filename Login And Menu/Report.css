@@ -1,0 +1,48 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+.box-first {
+    margin-left: 25%;
+    background-color: grey;
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 5px;
+    position: relative;
+}
+
+input[type="text"] {
+    border-radius: 20px;
+    border: 0.8px solid black;
+    padding: 8px;
+    margin: 4%;
+    width: 300px;
+}
+
+.main-search input[type="text"]{
+    margin-left: 40.5%;
+}
+
+.main-title .box-title {
+    font-size: 25px;
+    position: absolute;
+    left: 45%;
+    top: 15px;
+}
+
+.main-title {
+    background-color: black;
+    max-width: 700px;
+    padding: 1px;
+    margin-top: 5%;
+}
+
+.show-report {
+    margin: 15px;
+}
+
+#Icon-search {
+    font-size: 20px;
+    margin-left: -100px;
+}

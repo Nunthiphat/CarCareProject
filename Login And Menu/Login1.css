@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box-main {
+    width: 600px;
+    margin-left: 29%;
+    margin-top: 5%;
+    padding-bottom: 8%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.box-input {
+    text-align: center;
+}
+
+
+.box-insert {
+    display: block;
+    width: 325px;
+}
+
+input[type = text],
+input[type = password] {
+    margin: 10px;
+    padding: 8px;
+    background-color: rgb(146, 146, 146);
+    border: none;
+    margin-left: 22%;
+}
+
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+label {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.submit {
+    width: 150px;
+    background-color: red;
+    padding: 6px;
+    text-decoration: none;
+    color: aliceblue;
+    position: absolute;
+    border-radius: 5px;
+    border: none;
+    left: 37.5%;
+    margin-top: 10px;
+}
+
+.submit:hover {
+    background-color: rgb(154, 8, 8);
+}
+
+.alert alert-danger {
+    color: red;
+}
