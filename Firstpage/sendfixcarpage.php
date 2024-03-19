@@ -42,11 +42,14 @@
       <input type="tel" id="phone" name="phone" class="form-control" required><br>
       <label for="carid" class="required">หมายเลขทะเบียนรถ *</label><br>
       <input type="text" id="carid" name="carid" class="form-control" required><br><br>
-      <button type="submit" class="button-red">ส่งซ่อม</button>
-      <a href="Mainpage.php"><button class="button-gray">ย้อนกลับ</button></a>
+      <div class="button-container">
+        <button type="submit" class="button-red">ส่งซ่อม</button>
+        <button onclick="window.location.href='Mainpage.php';" button class="button-gray">ย้อนกลับ</button>
+      </div>
     </div>
   </form>
 </div>
+
   </form>
 
 </body>
