@@ -37,12 +37,22 @@
       <br><br><label style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold;">โปรดใส่ข้อมูล</label><br>
       <br><br><label for="custname" class="required">ชื่อลูกค้า *</label><br>
       <input type="text" id="custname" name="custname" class="form-control" required><br>
+
       <label for="phone" class="required">เบอร์โทรติดต่อ *</label><br>
       <input type="tel" id="phone" name="phone" class="form-control" required><br>
-      <label for="carid" class="required">หมายเลขทะเบียนรถ *</label><br>
-      <input type="text" id="carid" name="carid" class="form-control" required><br>
-      <label for="carid" class="required">อาการของรถ *</label><br>
-      <input type="text" id="carid" name="carid" class="form-control" required><br><br>
+
+      <label for="carlisenplate" class="required">หมายเลขทะเบียนรถ *</label><br>
+      <input type="text" id="carlisenplate" name="carlisenplate" class="form-control" required><br>
+
+      <label for="cardamage" class="required">อาการของรถ *</label><br>
+      <input type="text" id="cardamage" name="cardamage" class="form-control" required><br>
+
+      <label for="cartype" class="required">ยี่ห้อรถ *</label><br>
+      <input type="text" id="cartype" name="cartype" class="form-control" required><br>
+
+      <label for="carcolor" class="required">สีของรถ *</label><br>
+      <input type="text" id="carcolor" name="carcolor" class="form-control" required><br><br>
+
       <div class="button-container">
         <button type="submit" class="button-red">ส่งซ่อม</button>
         <button onclick="window.location.href='Mainpage.php';" button class="button-gray">ย้อนกลับ</button>

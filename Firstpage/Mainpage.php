@@ -19,7 +19,6 @@
 
       <div class="box-menu">
         <a href="Mainpage.php"><button class="button">หน้าแรก</button></a>
-        <a href="fixcar.php" style="/* เปลี่ยนเป็นอันที่จะพาไปหน้าบริการ */"><button class="button">บริการ</button></a>
         <a href="call.php"><button class="button">ติดต่อ</button></a>
         <a href="login.php" style="/* เปลี่ยนเป็นอันที่จะพาไปหน้าlogin */"><button class="button">Login</button></a>
       </div>
