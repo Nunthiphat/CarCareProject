@@ -37,7 +37,7 @@
                 <div>
                     <label for="serchemp">ค้นหาชื่อพนักงาน</label>
                     <div class="serch">
-                        <input type="text" name="serchemp">
+                        <input type="text" name="serchemp" placeholder="ใส้ชื่อพนักงาน">
                         <button type="submit" name="serch" class="blmm">ค้นหา</button>
                     </div>
                 </div>
@@ -67,10 +67,10 @@
                     <button type="submit" name="add" class="blmm">เพิ่ม</button>
                 </div>
                 <div>
-                    <button type="submit" name="change" class="blmm">แก้ไข</button>
+                    <button type="submit" name="delete" class="blmm">ลบ</button>
                 </div>
                 <div>
-                    <button type="submit" name="save" class="blmm">บันทึก</button>
+                    <button type="submit" name="change" class="blmm">แก้ไข</button>
                 </div>
             </div>
         </form>

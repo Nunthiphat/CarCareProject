@@ -74,12 +74,12 @@
                     <div>
                         <button type="submit" name="update" class="blmm">แก้ไข</button>
                     </div>
-                    <div>
+                    <!-- <div>
                         <button type="submit" name="save" class="blmm">บันทึก</button>
                     </div>
                     <div>
                         <button type="submit" name="print" class="blmm">พิมพ์</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </form>
