@@ -6,7 +6,7 @@
         // echo "serch<br>";
         if(isset($_POST["carid"]) && !empty($_POST["carid"])){
             $carid = $_POST["carid"];
-
+            // o e c Ca Fo PartoRder Part Payment
             $sql = "SELECT * FROM `car` WHERE Carlisenplate = ?";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql)) {

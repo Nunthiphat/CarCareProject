@@ -24,14 +24,12 @@
                         $CosName = $x['CosName'];
                         $CosPhone = $x['CosPhone'];
                         $CosAdress = $x['CosAdress'];
-                        $Carlisenplate = $x["Carlisenplate"];
                     }
                 } else {
                     $COSID = "";
                     $CosName = "";
                     $CosPhone = "";
                     $CosAdress = "";
-                    $Carlisenplate = "";
                 }
                 ?>
         <div class="Main">
@@ -61,10 +59,6 @@
                 <div>
                     <label for="Carlisenplate">ที่อยู่ลูกค้า</label>
                     <input type="text"name="address" value="<?= $CosAdress ?>">
-                </div>
-                <div>
-                    <label for="Carlisenplate">รหัสป้ายทะเบียนรถ</label>
-                    <input type="text"name="Carlisenplate" value="<?= $Carlisenplate ?>">
                 </div>
             </div>
             <div class="BTN">
