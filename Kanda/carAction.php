@@ -4,16 +4,16 @@
 
     if(isset($_POST["serch"])){
         // echo "serch<br>";
-        if(isset($_POST["cosname"]) && !empty($_POST["cosname"])){
-            $cosname = $_POST["cosname"];
+        if(isset($_POST["carid"]) && !empty($_POST["carid"])){
+            $carid = $_POST["carid"];
 
-            $sql = "SELECT * FROM `car` WHERE `CosName` = ?";
+            $sql = "SELECT * FROM `car` WHERE Carlisenplate = ?";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
                 header("location:car.php?error=StmtFailed");
                 exit();
             }
-            mysqli_stmt_bind_param($stmt, "s", $cosname);
+            mysqli_stmt_bind_param($stmt, "s", $carid);
             mysqli_stmt_execute($stmt);
             $resultData = mysqli_stmt_get_result($stmt);
             if (!$resultData) {
@@ -29,6 +29,7 @@
                 header("location:car.php?serch");
                 exit();
             } else {
+                unset($_SESSION["cardata"]);
                 header("location:car.php?error=NoDataFound");
                 exit();
             }
@@ -72,25 +73,25 @@
         }
     }
     elseif(isset($_POST["change"])){
-        if(isset($_POST["Datein"], $_POST["carid"], $_POST["carin"], $_POST["carbrand"], $_POST["detail"], $_POST["carcolor"], $_POST["cosname"]) 
-        && !empty($_POST["Datein"]) && !empty($_POST["carid"]) && !empty($_POST["carin"]) && !empty($_POST["carbrand"]) 
-        && !empty($_POST["detail"]) && !empty($_POST["carcolor"] && !empty($_POST["cosname"]))){
+        if(isset($_POST["carid"], $_POST["Datein"], $_POST["cosname"], $_POST["carin"], $_POST["carbrand"], $_POST["detail"], $_POST["carcolor"])
+        && !empty($_POST["carid"]) && !empty($_POST["Datein"]) && !empty($_POST["cosname"]) && !empty($_POST["carin"]) && !empty($_POST["carbrand"]) && !empty($_POST["detail"]) && !empty($_POST["carcolor"])){
+            
+            $carid = $_POST["carid"];
             $Datein = $_POST["Datein"];
-            $CosName = $_POST["cosname"];
-            $Carlisenplate = $_POST["carid"];
+            $cosname = $_POST["cosname"];
             $carin = $_POST["carin"];
             $carbrand = $_POST["carbrand"];
             $detail = $_POST["detail"];
             $carcolor = $_POST["carcolor"];
 
-            $sql = "UPDATE `car` SET `cardamage` = ?, `carname` = ?, `carcolor` = ?, `carin` = ?, `Datein` = ? WHERE `car`.`Carlisenplate` = ?";
+            $sql = "UPDATE `car` SET `Carlisenplate` = ?, `cardamage` = ?, `carname` = ?, `carcolor` = ?, `CosName` = ?, `carin` = ?, `Datein` = ? WHERE `car`.`Carlisenplate` = ?";
             $stmt = mysqli_stmt_init($conn);
 
             if (!mysqli_stmt_prepare($stmt, $sql)) {
                 header("location:car.php?error=StmtFailed");
                 exit();
             }
-            mysqli_stmt_bind_param($stmt, "sssssi", $detail, $carbrand, $carcolor, $carin, $Datein, $Carlisenplate);
+            mysqli_stmt_bind_param($stmt, "ssssssss", $carid, $detail, $carbrand, $carcolor, $cosname, $carin, $Datein, $carid);
 
             if (!mysqli_stmt_execute($stmt)) {
                 header("location:car.php?error=InsertFailed?$stmt");    

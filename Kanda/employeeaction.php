@@ -17,8 +17,9 @@
             }
             mysqli_stmt_bind_param($stmt, "sss", $empname, $tel, $address);                                                      
             mysqli_stmt_execute($stmt);
-		
-            header("location:employee.php?add$empname$tel$address");
+            
+            unset($_SESSION["empdata"]);
+            header("location:employee.php?add");
             exit();
         } else {
             header("location:employee.php?emptydata");
@@ -42,6 +43,7 @@
             mysqli_stmt_bind_param($stmt, "sssi", $empname, $tel, $address, $empid);                                                      
             mysqli_stmt_execute($stmt);
             
+            unset($_SESSION["empdata"]);
             header("location:employee.php?change");
 		    exit();
         } else {
@@ -74,9 +76,31 @@
                 header("location:employee.php?serch");
                 exit();
             } else {
+                unset($_SESSION["empdata"]);
                 header("location:employee.php?error=NoDataFound");
                 exit();
             }
+        } else {
+            header("location:employee.php?empdata");
+		    exit();
+        }
+    }
+    elseif(isset($_POST["delete"])) {
+        if(isset($_POST["empid"]) && !empty($_POST["empid"])){
+            $empid = $_POST["empid"];
+
+            $sql = "DELETE FROM employee WHERE `employee`.`EMPID` = ?";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt, $sql)){
+                header("location:costomer.php?error=StmtFaild");
+                exit();
+            }
+            mysqli_stmt_bind_param($stmt, "i", $empid);                                                      
+            mysqli_stmt_execute($stmt);
+            
+            unset($_SESSION["empdata"]);
+            header("location:employee.php?delete");
+		    exit();
         } else {
             header("location:employee.php?empdata");
 		    exit();

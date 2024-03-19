@@ -13,7 +13,7 @@
             <label for="Icon" class="text-icon">H I W K A O</label>
             <img class="Icon" src="Icon2.png" alt="Icon">
         </div>
-        <div class="container">
+        <div class="butbox">
             <button class="Mainpage" id="Mainpage" onclick="window.location.href='next_page.php'">หน้าหลัก</button>
             <button class="service" id="service" onclick="window.location.href='next_page.php'">บริการ</button>
             <button class="Contect" id="Contect" onclick="window.location.href='next_page.php'">ติดต่อ</button>

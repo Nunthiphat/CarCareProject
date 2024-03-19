@@ -45,7 +45,7 @@
                 <div>
                     <label for="cosname">ค้าหาชื่อเจ้าของรถ</label>
                     <div class="serch">
-                        <input type="text" name="cosname" value="<?= $CosName ?>">
+                        <input type="text" name="carid" value="<?= $Carlisenplate ?>" placeholder="ใส่รหัสรถยนต์">
                         <button type="submit" name="serch" class="blmm">ค้นหา</button>
                     </div>
                 </div>
@@ -54,8 +54,8 @@
                     <input type="date" name="Datein" value="<?= $Datein ?>">
                 </div>
                 <div>
-                    <label for="carid">รหัสรถยนต์</label>
-                    <input type="text" name="carid" value="<?= $Carlisenplate ?>">
+                    <label for="Datein">ชื่อลูกค้า</label>
+                    <input type="text" name="cosname" value="<?= $CosName ?>">
                 </div>
                 <div>
                     <label for="carin">วันที่มอบรถ</label>
@@ -76,18 +76,18 @@
                 </div>
                 <div class="BTN">
                     <div class="box"></div>
-                    <div>
+                    <!-- <div>
                         <button type="submit" name="add" class="blmm">เพิ่ม</button>
-                    </div>
+                    </div> -->
                     <div>
                         <button type="submit" name="change" class="blmm">แก้ไข</button>
                     </div>
-                    <div>
+                    <!-- <div>
                         <button type="submit" name="save" class="blmm">บันทึก</button>
-                    </div>
-                    <div>
+                    </div> -->
+                    <!-- <div>
                         <button type="submit" name="print" class="blmm">พิมพ์ข้อมูล</button>
-                    </div>
+                    </div> -->
                 </div>
         </form>
         </div>
