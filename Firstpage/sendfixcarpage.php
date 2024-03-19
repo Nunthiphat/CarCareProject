@@ -16,7 +16,6 @@
 
       <div class="box-menu">
         <a href="Mainpage.php"><button class="button">หน้าแรก</button></a>
-        <a href="fixcar.php"><button class="button">บริการ</button></a>
         <a href="call.php"><button class="button">ติดต่อ</button></a>
         <a href="login.php"><button class="button">Login</button></a>
       </div>
@@ -41,6 +40,8 @@
       <label for="phone" class="required">เบอร์โทรติดต่อ *</label><br>
       <input type="tel" id="phone" name="phone" class="form-control" required><br>
       <label for="carid" class="required">หมายเลขทะเบียนรถ *</label><br>
+      <input type="text" id="carid" name="carid" class="form-control" required><br>
+      <label for="carid" class="required">อาการของรถ *</label><br>
       <input type="text" id="carid" name="carid" class="form-control" required><br><br>
       <div class="button-container">
         <button type="submit" class="button-red">ส่งซ่อม</button>
