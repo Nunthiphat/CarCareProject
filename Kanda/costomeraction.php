@@ -28,29 +28,29 @@
     }
     elseif(isset($_POST["change"])){
         if (
-            isset($_POST["cosid"], $_POST["cosname"], $_POST["tel"], $_POST["address"], $_POST["Carlisenplate"]) &&
-            !empty($_POST["cosid"]) && !empty($_POST["cosname"]) && !empty($_POST["tel"]) && !empty($_POST["address"] && !empty($_POST["Carlisenplate"]))
+            isset($_POST["cosid"], $_POST["cosname"], $_POST["tel"], $_POST["address"]) &&
+            !empty($_POST["cosid"]) && !empty($_POST["cosname"]) && !empty($_POST["tel"]) && !empty($_POST["address"])
         ) {
             $cosid = $_POST["cosid"];
             $cosname = $_POST["cosname"];
             $tel = $_POST["tel"];
             $address = $_POST["address"];
-            $Carlisenplate = $_POST["Carlisenplate"];
         } else {
             header("location:costomer.php?EmptyValue");
             exit();
         }
-        $sql = "UPDATE `costomer` SET `CosName` = ?, `CosPhone` = ?, `CosAdress` = ?, `Carlisenplate` = ? WHERE `costomer`.`COSID` = ?;";
+        $sql = "UPDATE `costomer` SET `CosName` = ?, `CosPhone` = ?, `CosAdress` = ? WHERE `costomer`.`COSID` = ?;";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             header("location:costomer.php?error=StmtFaild");
             exit();
         }
-        mysqli_stmt_bind_param($stmt, "ssssi", $cosname, $tel, $address, $Carlisenplate ,$cosid);                                                      
+        mysqli_stmt_bind_param($stmt, "sssi", $cosname, $tel, $address, $cosid);                                                      
         if (!mysqli_stmt_execute($stmt)) {
-            header("location:part.php?error=InsertFailed?$stmt");    
+            $errorMessage = mysqli_error($conn);
+            header("location: part.php?error=InsertFailed&message=".urlencode($errorMessage));    
             exit();
-        }
+        }        
         unset($_SESSION['cosdata']);
 		header("location:costomer.php?update");
 		exit();
@@ -89,13 +89,13 @@
                 header("location:costomer.php?serch");
                 exit();
             } else {
+                unset($_SESSION['cosdata']);
                 header("location:costomer.php?error=NoDataFound");
                 exit();
             }
-    }
-	elseif (isset($_POST["clear"])){
+    } else {
 		unset($_SESSION['cosdata']);
-		header("location:costomer.php?clear");
+		header("location:costomer.php?error");
 		exit();	
 	}
 ?>

@@ -68,12 +68,6 @@
                 <div>
                     <button type="submit" name="change" class="blmm">แก้ไข</button>
                 </div>
-                <div>
-                    <button type="submit" name="save" class="blmm">บันทึก</button>
-                </div>
-                <div>
-                    <button type="submit" name="clear" class="blmm">ล้าง</button>
-                </div>
             </div>
         </div>
     </form>
